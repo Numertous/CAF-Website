@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuButton = document.querySelector(".menu-button");
     const dropdownMenu = document.querySelector(".dropdown-menu");
 
-    menuButton.addEventListener("click", function() {
+    menuButton.addEventListener("click", function(event) {
+        event.stopPropagation(); // Prevent click from propagating to document
         dropdownMenu.classList.toggle("show");
     });
 
