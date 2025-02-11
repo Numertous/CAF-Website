@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .nav-links {
@@ -35,15 +36,45 @@ body {
 .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #222;
-    padding: 10px;
-    list-style: none;
-    top: 50px;
-    right: 20px;
+    background-color: rgba(34, 34, 34, 0.95);
+    padding: 15px;
+    top: 60px;
+    right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .dropdown-menu.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: #ffcc00;
 }
 
 .hero {
